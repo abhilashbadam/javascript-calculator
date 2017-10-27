@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CALCULATOR</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+</head>
+    <style>
+    #container{
+position:relative;
+    width: 600px;
+    border:3px solid white;
+    border-radius:6px;
+    
+}
+input[type=text] {
+    width: 164px;
+    padding: 12px 20px;
+    margin: 0px 0;
+    height: 37px;
+    font-size: 35px;
+    box-sizing: border-box;
+    background-color: white;
+}
+input[type=button]{
+    width:120px;
+    font-size: 41px;
+    font-weight:400;
+    margin: 2%;
+    border-radius: 2px;
+    box-shadow: 0px 0px 1px 1px black;
+    }
+#tuch{
+    width:95%;
+    height: 48px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    
+}
+#main{
+    background-color: #558BED;
+}
+#number{
+    background-color:#F3F3F3;
+}
+.doit{
+    background-color: #D3D3D3
+}
+    </style>
+<body>
+    <div id="container">
+<form>
+ <input type="text" id="tuch" class="tuch" disabled style="text-align:right"><br>
+ <input type="button" id="brack" class="doit" value="(" onclick="toScreen('(')">
+  <input type="button" id="brack"  class="doit" value=")" onclick="toScreen(')')">
+     <input type="button" id="brack" class="doit" value="%" onclick="toScreen('%')">
+     <input type="button" id="brack" class="doit" value="AC" onclick="toScreen('c')"><br>
+     <input type="button" id="number" value="7" onclick="toScreen('7')">
+    <input type="button" id="number" value="8" onclick="toScreen('8')">
+    <input type="button" id="number" value="9" onclick="toScreen('9')">
+    <input type="button" id="brack" class="doit"  value="÷" onclick="toScreen('/')"><br>
+    <input type="button" id="number" value="4" onclick="toScreen('4')">
+    <input type="button" id="number" value="5" onclick="toScreen('5')">
+    <input type="button" id="number" value="6" onclick="toScreen('6')">
+    <input type="button" id="brack" class="doit"  value="X" onclick="toScreen('*')"><br>
+    <input type="button" id="number" value="1" onclick="toScreen('1')">
+    <input type="button" id="number" value="2" onclick="toScreen('2')">
+    <input type="button" id="number" value="3" onclick="toScreen('3')">
+    <input type="button" id="brack" class="doit" value="-" onclick="toScreen('-')"><br>
+    <input type="button" id="number" value="0" onclick="toScreen('0')">
+    <input type="button" id="number" value="." onclick="toScreen('.')">
+    <input type="button" id="main" value="=" onclick="answer('')">
+    <input type="button" id="equal" class="doit" value="+" onclick="toScreen('+')">
+    </form>
+        </div>
+    <script>
+        var current='0';
+    var store= document.getElementById("tuch");
+store.value=current;
+       
+function toScreen(x){
+    store.value+=x;
+    if(x==='c'){
+        store.value=current;
+    }
+}
+function answer(){
+            x=store.value;
+            x=eval(x);
+            store.value=x;
+        }
+    </script>
+</body>
+</html>
