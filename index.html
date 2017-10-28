@@ -5,49 +5,8 @@
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
+<link rel="stylesheet" href="style.css">
 </head>
-    <style>
-    #container{
-position:relative;
-    width: 600px;
-    border:3px solid white;
-    border-radius:6px;
-    
-}
-input[type=text] {
-    width: 164px;
-    padding: 12px 20px;
-    margin: 0px 0;
-    height: 37px;
-    font-size: 35px;
-    box-sizing: border-box;
-    background-color: white;
-}
-input[type=button]{
-    width:120px;
-    font-size: 41px;
-    font-weight:400;
-    margin: 2%;
-    border-radius: 2px;
-    box-shadow: 0px 0px 1px 1px black;
-    }
-#tuch{
-    width:95%;
-    height: 48px;
-    box-sizing: border-box;
-    padding-left: 10px;
-    
-}
-#main{
-    background-color: #558BED;
-}
-#number{
-    background-color:#F3F3F3;
-}
-.doit{
-    background-color: #D3D3D3
-}
-    </style>
 <body>
     <div id="container">
 <form>
@@ -74,22 +33,6 @@ input[type=button]{
     <input type="button" id="equal" class="doit" value="+" onclick="toScreen('+')">
     </form>
         </div>
-    <script>
-        var current='0';
-    var store= document.getElementById("tuch");
-store.value=current;
-       
-function toScreen(x){
-    store.value+=x;
-    if(x==='c'){
-        store.value=current;
-    }
-}
-function answer(){
-            x=store.value;
-            x=eval(x);
-            store.value=x;
-        }
-    </script>
+    <script type="text/javascript" src="calculator.js"></script>
 </body>
 </html>
